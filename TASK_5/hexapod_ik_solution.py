@@ -14,7 +14,6 @@ def ik(x, y, z):
     d = math.sqrt(x**2 + y**2) - L1
     l = math.sqrt(d**2 + z**2)
     if not r(x, y, z):
-        print(f"Target ({x}, {y}, {z}) is out of reach.")
         return None
     p = math.atan2(z, d)
     q = (L2**2 + l**2 - L3**2) / (2 * L2 * l)
@@ -33,23 +32,23 @@ def ik(x, y, z):
 
 def ts():
     T = [
-        ("Test 1", (15, 5, -10)),
-        ("Test 2", (6, 0, -1)),
-        ("Test 3", (28, 0, 0)),
-        ("Test 4", (35, 0, 0)),
-        ("Test 5", (10, 0, -25)),
+        ("T1", (15, 5, -10)),
+        ("T2", (6, 0, -1)),
+        ("T3", (28, 0, 0)),
+        ("T4", (35, 0, 0)),
+        ("T5", (10, 0, -25)),
     ]
-    for i, (label, (x, y, z)) in enumerate(T, 1):
-        print(f"\n{label}")
-        print(f"Input: x={x}, y={y}, z={z}")
+    for _, (l, (x, y, z)) in enumerate(T):
+        print(f"\n{l}")
+        print(f"x={x}, y={y}, z={z}")
         A = ik(x, y, z)
         if A:
             a, b, c = A
-            print(f"Output: α={a:.2f}, β={b:.2f}, γ={c:.2f}")
-            print("Reachable")
+            print(f"α={a:.2f}, β={b:.2f}, γ={c:.2f}")
+            print("R")
         else:
-            print("Output: N/A")
-            print("❌ Unreachable")
+            print("N/A")
+            print("U")
 
 if __name__ == "__main__":
     ts()
