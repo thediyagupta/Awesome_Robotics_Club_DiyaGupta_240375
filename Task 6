@@ -1,3 +1,5 @@
+PART A
+
 I would use an hybrid mechanism(tracked and legged).because climbing requires both stability and adabtibility to varying step heights or angles.
 
  
@@ -59,6 +61,8 @@ COM: centre of mass would be kept as low as possible to ensure stability.
 - If stairs are regular and low → use tracks for energy-efficient climbing. and if they re steep or irregular → use legs.
 - IMU checks for stability while climbing.
 - PID or similar logic can be used to calculate optimal path for next few steps.
+
+PART B
 
 In case  Midway through the climb, **one side of the crawler (left or right) stops** due to a **motor fault or gear jam**.
 This willl cause the robot to lose its straight path and possibly move **diagonally or sideways**, which is dangerous on stairs.
